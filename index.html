@@ -18,8 +18,8 @@
         .sidebar { width: 300px; background: var(--primary); height: 100vh; position: fixed; color: white; padding: 30px 20px; z-index: 100; }
         .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--accent); display: block; margin: 0 auto 15px; object-fit: cover; background: #eee; }
         
-        .nav-menu { list-style: none; margin-top: 30px; }
-        .nav-item { padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: #cbd5e1; }
+        .nav-menu { list-style: none; margin-top: 20px; }
+        .nav-item { padding: 12px 15px; margin-bottom: 5px; border-radius: 10px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: #cbd5e1; }
         .nav-item:hover { background: rgba(255,255,255,0.1); color: white; }
         .nav-item.active { background: var(--accent); color: white; font-weight: 600; }
 
@@ -38,12 +38,11 @@
         .btn-download { display: inline-block; margin-top: 15px; padding: 10px 18px; background-color: var(--green); color: white; text-decoration: none; border-radius: 8px; font-size: 0.85rem; font-weight: 600; transition: 0.3s; text-align: center; width: 100%; border: none; cursor: pointer; }
         .btn-download:hover { background-color: #059669; transform: translateY(-2px); }
 
-        /* Work Experience Badge */
         .work-date { background: #dbeafe; color: #1e40af; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; margin-bottom: 10px; display: inline-block; }
 
         /* Family Section Styles */
         .family-item { background: white; border-radius: 12px; margin-bottom: 10px; overflow: hidden; border: 1px solid #e2e8f0; }
-        .family-header { padding: 18px 25px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+        .family-header { padding: 18px 25px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #334155; }
         .family-body { display: none; padding: 20px; background: #fcfcfc; border-top: 1px solid #eee; }
     </style>
 </head>
@@ -63,6 +62,7 @@
         <li class="nav-item active" onclick="showTab('main-tab', this)">🏠 Asosiy panel</li>
         <li class="nav-item" onclick="showTab('docs-tab', this)">📂 Shaxsiy hujjatlar</li>
         <li class="nav-item" onclick="showTab('family-tab', this)">👨‍👩‍👧‍👦 Oila a'zolari</li>
+        <li class="nav-item" onclick="showTab('house-tab', this)">🏠 Uy-joy hujjatlari</li>
         <li class="nav-item" onclick="showTab('work-tab', this)">💼 Mehnat faoliyati</li>
     </ul>
 </div>
@@ -101,11 +101,6 @@
                 <a href="diplom.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
             </div>
             <div class="card">
-                <h3>📜 Diplom ilova</h3>
-                <p>Baho va qaydlar varag'i</p>
-                <a href="diplom_ilova.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
-            </div>
-            <div class="card">
                 <h3>💍 Nikoh guvohnomasi</h3>
                 <p>Raqam: 03001672 (16.12.2022)</p>
                 <a href="nikoh.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
@@ -119,7 +114,7 @@
     </div>
 
     <div id="family-tab" class="tab-content">
-        <h2 class="section-header">Oila a'zolari va hujjatlar</h2>
+        <h2 class="section-header">Oila a'zolari ва ҳужжатлар</h2>
         
         <div class="family-item">
             <div class="family-header" onclick="toggleFamily('ota-docs')">
@@ -127,13 +122,7 @@
                 <span>📂 Ko'rish</span>
             </div>
             <div id="ota-docs" class="family-body">
-                <div class="grid">
-                    <div class="card">
-                        <p><strong>Pasport:</strong> AD 9991417</p>
-                        <p><strong>JShShIR:</strong> 32109711110031</p>
-                        <a href="ota_pasport.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
-                    </div>
-                </div>
+                <div class="card"><p>Pasport: AD 9991417</p><a href="ota_pasport.pdf" download class="btn-download">📄 PDF Yuklab olish</a></div>
             </div>
         </div>
 
@@ -143,13 +132,7 @@
                 <span>📂 Ko'rish</span>
             </div>
             <div id="ona-docs" class="family-body">
-                <div class="grid">
-                    <div class="card">
-                        <p><strong>Pasport:</strong> AB 4224144</p>
-                        <p><strong>JShShIR:</strong> 41102715350050</p>
-                        <a href="ona_pasport.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
-                    </div>
-                </div>
+                <div class="card"><p>Pasport: AB 4224144</p><a href="ona_pasport.pdf" download class="btn-download">📄 PDF Yuklab olish</a></div>
             </div>
         </div>
 
@@ -159,42 +142,47 @@
                 <span>📂 Ko'rish</span>
             </div>
             <div id="ayoli-docs" class="family-body">
-                <div class="grid">
-                    <div class="card">
-                        <p><strong>Pasport:</strong> AB 9512898</p>
-                        <p><strong>JShShIR:</strong> 60612005350028</p>
-                        <a href="ayoli_pasport.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
-                    </div>
-                </div>
+                <div class="card"><p>Pasport: AB 9512898</p><a href="ayoli_pasport.pdf" download class="btn-download">📄 PDF Yuklab olish</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="house-tab" class="tab-content">
+        <h2 class="section-header">Uy-joy ва Кадастр ҳужжатлари</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🏠 Кадастр паспорти</h3>
+                <p>Кўчмас мулк объекти маълумотлари</p>
+                <a href="kadastr.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
+            </div>
+            <div class="card">
+                <h3>📜 Мулк ҳуқуқи</h3>
+                <p>Давлат реестридан кўчирма</p>
+                <a href="mulk_huquqi.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
+            </div>
+            <div class="card">
+                <h3>⚡️ Коммунал шартномалар</h3>
+                <p>Газ, Электр ва Ичимлик суви шартномалари</p>
+                <a href="kommunal.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
             </div>
         </div>
     </div>
 
     <div id="work-tab" class="tab-content">
-        <h2 class="section-header">Mehnat faoliyati xronologiyasi</h2>
+        <h2 class="section-header">Mehnat faoliyati</h2>
         <div class="grid">
-            
-            <div class="card">
-                <span class="work-date">2017 — 2021 йй.</span>
-                <h3>Бухоро муҳандислик-технология институти</h3>
-                <p>Талабалик даври</p>
-                <a href="diplom.pdf" download class="btn-download">📄 Дипломни кўриш</a>
-            </div>
-
-            <div class="card">
-                <span class="work-date">2021 — 2022 йй.</span>
-                <h3>Жондор тумани ободонлаштириш бошқармаси</h3>
-                <p>Мутахассис лавозимида</p>
-                <a href="buyruq_2021.pdf" download class="btn-download">📄 Буйруқни юклаб олиш</a>
-            </div>
-
             <div class="card">
                 <span class="work-date">2022 й. — ҳ.в.</span>
                 <h3>Жондор тумани ҳокимлиги</h3>
                 <p>Бош мутахассис лавозимида</p>
                 <a href="tayinlov_buyruq.pdf" download class="btn-download">📄 Тайинлов буйруғини юклаб олиш</a>
             </div>
-
+            <div class="card">
+                <span class="work-date">2021 — 2022 йй.</span>
+                <h3>Жондор тумани ободонлаштириш бошқармаси</h3>
+                <p>Мутахассис лавозимида</p>
+                <a href="buyruq_2021.pdf" download class="btn-download">📄 Буйруқни юклаб олиш</a>
+            </div>
         </div>
     </div>
 
@@ -207,12 +195,10 @@
         document.getElementById(tabId).classList.add('active');
         element.classList.add('active');
     }
-
     function toggleFamily(id) {
         let content = document.getElementById(id);
         content.style.display = (content.style.display === "block") ? "none" : "block";
     }
-
     function checkPass() {
         if(document.getElementById("passInput").value === "1999") {
             document.getElementById("lock-screen").style.display = "none";
