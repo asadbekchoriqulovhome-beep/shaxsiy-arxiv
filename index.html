@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asadbek Choriqulov | Shaxsiy Arxiv</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0f172a; --accent: #2563eb; --bg: #f1f5f9; --white: #ffffff; --green: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); display: flex; overflow-x: hidden; }
+
+        /* Lock Screen */
+        #lock-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary); z-index: 10000; display: flex; justify-content: center; align-items: center; color: white; flex-direction: column; }
+        #lock-screen input { padding: 12px; border-radius: 8px; border: none; margin-top: 15px; text-align: center; font-size: 1rem; width: 200px; outline: none; }
+
+        /* Sidebar */
+        .sidebar { width: 300px; background: var(--primary); height: 100vh; position: fixed; color: white; padding: 30px 20px; z-index: 100; }
+        .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--accent); display: block; margin: 0 auto 15px; object-fit: cover; background: #eee; }
+        
+        .nav-menu { list-style: none; margin-top: 30px; }
+        .nav-item { padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: #cbd5e1; }
+        .nav-item:hover { background: rgba(255,255,255,0.1); color: white; }
+        .nav-item.active { background: var(--accent); color: white; font-weight: 600; }
+
+        /* Main Content */
+        .main { margin-left: 300px; width: calc(100% - 300px); padding: 50px; }
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .section-header { margin-bottom: 25px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; color: var(--primary); font-size: 1.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .card { background: var(--white); padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eef2f6; position: relative; }
+        .card h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.1rem; }
+
+        /* Buttons */
+        .btn-download { display: inline-block; margin-top: 15px; padding: 10px 18px; background-color: var(--green); color: white; text-decoration: none; border-radius: 8px; font-size: 0.85rem; font-weight: 600; transition: 0.3s; text-align: center; width: 100%; border: none; cursor: pointer; }
+        .btn-download:hover { background-color: #059669; transform: translateY(-2px); }
+
+        /* Work Experience Badge */
+        .work-date { background: #dbeafe; color: #1e40af; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; margin-bottom: 10px; display: inline-block; }
+
+        /* Family Section Styles */
+        .family-item { background: white; border-radius: 12px; margin-bottom: 10px; overflow: hidden; border: 1px solid #e2e8f0; }
+        .family-header { padding: 18px 25px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+        .family-body { display: none; padding: 20px; background: #fcfcfc; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+<div id="lock-screen">
+    <h3>Asadbek Choriqulov | Shaxsiy Arxiv</h3>
+    <input type="password" id="passInput" placeholder="Parolni kiriting" oninput="checkPass()">
+</div>
+
+<div class="sidebar">
+    <img src="me.jpg" alt="Asadbek" class="profile-img">
+    <h2 style="text-align: center; font-size: 1rem; margin-bottom: 5px;">Asadbek Choriqulov</h2>
+    <p style="text-align: center; font-size: 0.75rem; opacity: 0.6;">Bosh mutaxassis</p>
+    
+    <ul class="nav-menu">
+        <li class="nav-item active" onclick="showTab('main-tab', this)">🏠 Asosiy panel</li>
+        <li class="nav-item" onclick="showTab('docs-tab', this)">📂 Shaxsiy hujjatlar</li>
+        <li class="nav-item" onclick="showTab('family-tab', this)">👨‍👩‍👧‍👦 Oila a'zolari</li>
+        <li class="nav-item" onclick="showTab('work-tab', this)">💼 Mehnat faoliyati</li>
+    </ul>
+</div>
+
+<div class="main">
+    
+    <div id="main-tab" class="tab-content active">
+        <h2 class="section-header">Asosiy panel</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Bog'lanish</h3>
+                <p>📞 +998 94 544 44 37</p>
+                <p>✈️ @choriqulov_23</p>
+                <p>📧 asadbekchoriqulov4444@gmail.com</p>
+            </div>
+            <div class="card">
+                <h3>Xizmat ma'lumotlari</h3>
+                <p>🎖 5-darajali xizmatchi</p>
+                <p>📍 Jondor tumani hokimligi</p>
+                <p>📅 2022 йил 13 майдан ҳозиргача</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="docs-tab" class="tab-content">
+        <h2 class="section-header">Shaxsiy PDF hujjatlar</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🪪 Pasport (O'zim)</h3>
+                <p>AB 3377399 | 32302995350018</p>
+                <a href="pasport.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
+            </div>
+            <div class="card">
+                <h3>🎓 Diplom</h3>
+                <p>B 00119022 (01.07.2021)</p>
+                <a href="diplom.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
+            </div>
+            <div class="card">
+                <h3>📜 Diplom ilova</h3>
+                <p>Baho va qaydlar varag'i</p>
+                <a href="diplom_ilova.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
+            </div>
+            <div class="card">
+                <h3>💍 Nikoh guvohnomasi</h3>
+                <p>Raqam: 03001672 (16.12.2022)</p>
+                <a href="nikoh.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
+            </div>
+            <div class="card">
+                <h3>🔑 ERI (Elektron imzo)</h3>
+                <p>Muddati: 22.11.2026 gacha</p>
+                <a href="eri.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="family-tab" class="tab-content">
+        <h2 class="section-header">Oila a'zolari va hujjatlar</h2>
+        
+        <div class="family-item">
+            <div class="family-header" onclick="toggleFamily('ota-docs')">
+                <span>👨‍💼 Mavlonov Ulug'bek (Otasi)</span>
+                <span>📂 Ko'rish</span>
+            </div>
+            <div id="ota-docs" class="family-body">
+                <div class="grid">
+                    <div class="card">
+                        <p><strong>Pasport:</strong> AD 9991417</p>
+                        <a href="ota_pasport.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="family-item">
+            <div class="family-header" onclick="toggleFamily('ona-docs')">
+                <span>👩‍💼 Raxmanova Faxriya (Onasi)</span>
+                <span>📂 Ko'rish</span>
+            </div>
+            <div id="ona-docs" class="family-body">
+                <div class="grid">
+                    <div class="card">
+                        <p><strong>Pasport:</strong> AB 4224144</p>
+                        <a href="ona_pasport.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="family-item">
+            <div class="family-header" onclick="toggleFamily('ayoli-docs')">
+                <span>👩‍⚕️ Umurova Dilshoda (Turmush o'rtog'i)</span>
+                <span>📂 Ko'rish</span>
+            </div>
+            <div id="ayoli-docs" class="family-body">
+                <div class="grid">
+                    <div class="card">
+                        <p><strong>Pasport:</strong> AB 9512898</p>
+                        <a href="ayoli_pasport.pdf" download class="btn-download">📄 PDF Yuklab olish</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="work-tab" class="tab-content">
+        <h2 class="section-header">Mehnat faoliyati xronologiyasi</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <span class="work-date">2017 — 2021 йй.</span>
+                <h3>Бухоро муҳандислик-технология институти</h3>
+                <p>Талабалик даври</p>
+                <a href="diplom.pdf" download class="btn-download">📄 Дипломни кўриш</a>
+            </div>
+
+            <div class="card">
+                <span class="work-date">2021 — 2022 йй.</span>
+                <h3>Жондор тумани ободонлаштириш бошқармаси</h3>
+                <p>Мутахассис лавозимида</p>
+                <a href="buyruq_2021.pdf" download class="btn-download">📄 Буйруқни юклаб олиш</a>
+            </div>
+
+            <div class="card">
+                <span class="work-date">2022 й. — ҳ.в.</span>
+                <h3>Жондор тумани ҳокимлиги</h3>
+                <p>Бош мутахассис лавозимида</p>
+                <a href="tayinlov_buyruq.pdf" download class="btn-download">📄 Тайинлов буйруғи</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function showTab(tabId, element) {
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        element.classList.add('active');
+    }
+
+    function toggleFamily(id) {
+        let content = document.getElementById(id);
+        content.style.display = (content.style.display === "block") ? "none" : "block";
+    }
+
+    function checkPass() {
+        if(document.getElementById("passInput").value === "1999") {
+            document.getElementById("lock-screen").style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
